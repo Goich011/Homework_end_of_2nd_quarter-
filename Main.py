@@ -1,5 +1,8 @@
 
 
+import datetime
+
+
 def main(): # запуск приложения
     notes = []
     done = False
@@ -33,3 +36,14 @@ def main(): # запуск приложения
             case _:
                 print("Не корректная команда")
 
+def inputData(notes): #Запись заметки
+    dimens = len(notes)
+    name = input("Название заметки:")
+    content = input("Заметка:")
+    now = datetime.datetime.now()
+    return [name, content, now.strftime("%d-%m-%Y %H:%M"), dimens]  
+
+def addNote(notes):
+    noteinfo = inputData(notes)
+    
+    
